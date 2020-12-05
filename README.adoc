@@ -1,0 +1,36 @@
+= IBM Cloud Secret Manager Template
+
+IBM Cloud Secret Manager template with HashiCorp Terraform.
+You can provision Secret Manager instance.
+
+== Prerequisite
+
+* IBM Cloud CLI installed.
+
+* IBM Cloud IAM API Key issued.
+
+* Terraform 0.13.x or higher installed.
+** If you use tfenv, just run `tfenv install`
+
+== Usage
+
+.Provisioning Secret Manager instance
+----
+# Install provider
+$ export IC_API_KEY=zzzzzzzzzz
+$ terraform init
+
+# Provision from template
+$ cat vars.tfvars
+region = "us-south"
+
+$ terraform plan -var-file=vars.tfvars
+
+# This may take up to 5min.
+$ terraform apply -var-file=vars.tfvars
+----
+
+.Cleanup
+----
+$ terraform destroy -var-file=vars.tfvars
+----

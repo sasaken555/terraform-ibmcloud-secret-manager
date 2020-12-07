@@ -28,7 +28,7 @@ resource "ibm_iam_access_group_members" "secret_manager_engine" {
 
 resource "ibm_iam_access_group_policy" "iam_groups_editor" {
   access_group_id = ibm_iam_access_group.secret_manager_engine.id
-  roles = ["Editor"]
+  roles           = ["Editor"]
   resources {
     service = "iam-groups"
   }
@@ -36,7 +36,7 @@ resource "ibm_iam_access_group_policy" "iam_groups_editor" {
 
 resource "ibm_iam_access_group_policy" "iam_identity_operator" {
   access_group_id = ibm_iam_access_group.secret_manager_engine.id
-  roles = ["Operator"]
+  roles           = ["Operator"]
   resources {
     service = "iam-identity"
   }

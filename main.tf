@@ -41,3 +41,7 @@ resource "ibm_iam_access_group_policy" "iam_identity_operator" {
     service = "iam-identity"
   }
 }
+
+output "secret_engine_service_id" {
+  value = ibm_iam_service_id.secret_manager_engine.id
+}
